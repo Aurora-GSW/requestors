@@ -1,19 +1,40 @@
 {
-  "name": "requestor",
-  "version": "1.0.0",
-  "description": "This is a lightweight request library",
-  "type": "module",
-  "main": "index.ts",
+  "name": "requestors",
+  "version": "0.1.1",
+  "main": "lib/index.cjs.js",
+  "module": "lib/index.esm.js",
+  "jsnext:main": "lib/index.esm.js",
+  "browser": "lib/index.umd.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib",
+    "README.md"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rollup --config rollup.config.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "description": "A simple request library",
+  "keywords": [
+    "Requestor",
+    "Concurrency",
+    "Cache",
+    "Idempotent",
+    "serial",
+    "Retry"
+  ],
+  "author": "gongshiwei",
+  "license": "MIT",
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^26.0.1",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-terser": "^0.4.4",
     "@rollup/plugin-typescript": "^11.1.6",
+    "@types/md5": "^2.3.5",
     "rollup": "^4.18.1",
     "tslib": "^2.6.3"
+  },
+  "dependencies": {
+    "md5": "^2.3.0"
   }
 }

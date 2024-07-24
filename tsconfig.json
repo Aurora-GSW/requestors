@@ -1,6 +1,7 @@
 {
 	"compileOnSave": true,
-	"include": ["./packages/**/*"],
+	"include": ["index.ts"],
+	"exclude": ["node_modules", "lib"],
 	"compilerOptions": {
 		"target": "ESNext",
 		"useDefineForClassFields": true,
@@ -8,7 +9,10 @@
 		"lib": ["ESNext", "DOM"],
 		"moduleResolution": "Node",
 		"strict": true,
-		"sourceMap": true,
+		"checkJs": true,
+		"declaration": true,
+		"declarationDir":"./lib",
+		"sourceMap": false,
 		"resolveJsonModule": true,
 		"isolatedModules": true,
 		"esModuleInterop": true,
@@ -16,7 +20,7 @@
 		"noUnusedLocals": false,
 		"noUnusedParameters": false,
 		"noImplicitReturns": false,
-		// "skipLibCheck": true,
-		"baseUrl": "./packages",
+		"rootDir": "./",
+		"outDir": "lib"
 	}
 }
