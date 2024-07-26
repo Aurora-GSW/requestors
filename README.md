@@ -4,17 +4,15 @@
 
 At present, the underlying basic request based on Fetch encapsulation, the use of dependency inversion principle for the design, the core implementation of the logic and the underlying request library decoupled from the implementation of the library , you can easily switch to the underlying request library implementation , such as switching to axios and so on.
 
-
-
 ## mounting
 
 ```
 npm i requestors
+
 yarn add requestors
+
 pnpm i requestors
 ```
-
-
 
 ## Basic use
 
@@ -50,8 +48,6 @@ requestor.put(...)
 requestor.delete(...)
 ```
 
-
-
 ## Request Cache
 
 ```ts
@@ -73,8 +69,6 @@ requestor.get('/api/userInfo')  // send a request
 requestor.get('/api/userInfo')  // No more requests, use cached results
 ```
 
-
-
 ## Request Concurrency
 
 ```ts
@@ -93,8 +87,6 @@ requestor.delete(...)
 .......
 ```
 
-
-
 ## Request Idempotent
 
 ```ts
@@ -110,8 +102,6 @@ requestor.put(...)
 requestor.delete(...)
 .......
 ```
-
-
 
 ## Request Retry
 
@@ -132,8 +122,6 @@ requestor.delete(...)
 .......
 ```
 
-
-
 ## Request Serial
 
 ```ts
@@ -152,7 +140,7 @@ const config = [
       body:{
           loginId:'admin',
           loginPwd:'123123'
-      }  
+      }
     },
     passValue: (res) => { // Deep merge the passValue return value with the info of the next request, then issue the request
       return {
@@ -177,4 +165,3 @@ requestor(config).then(res=>{
     console.log(res) // [...]
 })
 ```
-
